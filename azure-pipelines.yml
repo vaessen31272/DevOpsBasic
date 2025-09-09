@@ -1,6 +1,6 @@
 # Maven
 
-# Build your Java project and run tests with Apache Maven.
+
 
 
 trigger:
@@ -20,8 +20,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
 - task: CopyFiles@2
   inputs:
-    Contents: '**/war'
+    Contents: '**/*.war'
     TargetFolder: '$(build.artifactstagingdirectory)'
+
